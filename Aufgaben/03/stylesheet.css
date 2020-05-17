@@ -12,6 +12,11 @@ h3 {
     padding-bottom: 10px;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 body {
     margin: 0;
     text-align: center;
@@ -26,24 +31,39 @@ body {
     padding-top: 0px;
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
 nav ul.flex-container li {
     display: inline-block;
-    padding: 10px 30px 10px 30px;
+    display: flex;
+}
+
+nav ul.flex-container li a {
+    display: block;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+a:hover {
+    background-color: #8A084B;
 }
 
 nav ul.flex-container {
-    padding-left: 0px;
+    padding: 0;
     list-style: none;
     background-color: #01A9DB;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 20px 2px black;
 }
 
 nav {
     position: fixed;
-    top: 0;
-    right: 30px;
+    top: 0px;
+    right: 50px;
 }
 
 .rechts {
@@ -79,10 +99,6 @@ header {
     color: #8A084B;
 }
 
-a:hover {
-    background-color: #8A084B;
-}
-
 .name {
     border: none;
     width: 200px;
@@ -95,4 +111,27 @@ a:hover {
     margin-top: 5px;
     padding-bottom: 20px;
     margin-bottom: 10px;
+}
+
+.main-content {
+    width: 800px;
+}
+
+.image-fill-width {
+    width: 100%;
+}
+
+.image-fill-half-width {
+    width: 50%;
+}
+
+nav.social-icons a img {
+    height: 50px;
+    width: 50px;
+}
+
+nav.social-icons {
+    position: absolute;
+    left: 30px;
+    top: 270px;
 }
