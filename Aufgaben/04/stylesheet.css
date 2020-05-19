@@ -1,0 +1,93 @@
+a:hover {
+    background-color: #CED8F6;
+}
+
+.shoptitle {
+    font-family: 'Teko', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.begrüßung h1 {
+    color: #0B3861;
+}
+
+.einleitung p {
+    font-size: 20px;
+}
+
+.einleitung a {
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+.logo-nav a {
+    height: 100%;
+    justify-self: end;
+}
+
+.logo-nav a img {
+    height: 100%;
+}
+
+.cart-icon {
+    margin-left: 10px;
+}
+
+.logo-nav {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.suchfunktion {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.search {
+    height: 50%;
+}
+
+.nav-kategorien {
+    justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.nav-width {
+    width: 100%;
+    background-color: #CED8F6;
+}
+
+.nav-kategorien a:hover {
+    background-color: white;
+}
+
+.nav-kategorien a {
+    height: 100%;
+}
+
+.bild-breite img {
+    width: 50%;
+}
+
+.produkt-container {
+    justify-content: center;
+}
+
+.bild-breite-produkt {
+ 
+}
