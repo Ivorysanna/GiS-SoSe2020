@@ -85,9 +85,37 @@ body {
 }
 
 .produkt-container {
-    justify-content: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 50px;
 }
 
-.bild-breite-produkt {
- 
+.banner-size{
+    margin-bottom: -50px;
+    height: 40%;
+}
+
+
+
+/* Artikel Beschreibung, Preis, Namen, Kaufbutton */
+
+.produkt p{
+    position: absolute;
+    bottom: 5%;
+    color: red;
+    left: 5%;
+    font-size: 20px;
+}
+
+.produkt{
+    position: relative;
+    width: 30%;
+    
+}
+
+.produkt img{
+    object-fit: cover;  
+    height: 100%;
+    width: 100%;
 }
