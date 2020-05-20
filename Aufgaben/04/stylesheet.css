@@ -98,8 +98,7 @@ body {
     margin-bottom: 70px;
     width: 100%;
     height: 50vh;
-    object-fit: cover
-    
+    object-fit: cover 
 }
 
 .wikieintrag a{
@@ -110,9 +109,16 @@ body {
 #alpaka-Kauf{
     font-size: 20px;
     margin-top: 0px;
-
+    
+}
+#alpaka-Kauf a{
+    text-decoration: underline;
 }
 
+h2.Kategorien-Unterteilungen{
+    font-size: 40px;
+    text-decoration: underline;
+}
 
 
 /* Artikel Beschreibung, Preis, Namen, Kaufbutton */
@@ -120,7 +126,6 @@ body {
 .produkt p{
     position: absolute;
     bottom: 5%;
-    color: red;
     left: 5%;
     font-size: 20px;
     padding: 1%;
