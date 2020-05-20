@@ -1,14 +1,7 @@
+/* Komplexe Selektoren */
+
 a:hover {
     background-color: #CED8F6;
-}
-
-.shoptitle {
-    font-family: 'Teko', sans-serif;
-}
-
-a {
-    color: inherit;
-    text-decoration: inherit;
 }
 
 .begrüßung h1 {
@@ -19,13 +12,12 @@ a {
     font-size: 20px;
 }
 
-.einleitung a {
-    font-weight: bold;
+.shoptitle {
+    font-family: 'Teko', sans-serif;
 }
 
-body {
-    margin: 0;
-    text-align: center;
+.einleitung a {
+    font-weight: bold;
 }
 
 .logo-nav a {
@@ -37,6 +29,24 @@ body {
     height: 100%;
 }
 
+/* Überschriebene Tags */
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+h2.Kategorien-Unterteilungen {
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+/* -------------------------------- */
 .cart-icon {
     margin-left: 10px;
     height: 100%;
@@ -48,7 +58,6 @@ body {
     display: flex;
     height: 50px;
     align-items: center;
-    
 }
 
 .suchfunktion {
@@ -84,6 +93,8 @@ body {
 
 .bild-breite img {
     width: 50%;
+    margin-top: 0px;
+    margin-bottom: 15px;
 }
 
 .produkt-container {
@@ -94,36 +105,37 @@ body {
     flex-wrap: wrap;
 }
 
-.banner-size img{
+.banner-size img {
     margin-bottom: 70px;
     width: 100%;
     height: 50vh;
-    object-fit: cover 
+    object-fit: cover
 }
 
-.wikieintrag a{
+.wikieintrag a {
     font-size: 10px;
     color: blue;
 }
 
-#alpaka-Kauf{
+#alpaka-Kauf {
     font-size: 20px;
     margin-top: 0px;
-    
 }
-#alpaka-Kauf a{
+
+#alpaka-Kauf a {
     text-decoration: underline;
 }
 
-h2.Kategorien-Unterteilungen{
-    font-size: 40px;
-    text-decoration: underline;
-}
 
+
+.rechtsbünding {
+    text-align: right;
+    padding-bottom: 10px;
+}
 
 /* Artikel Beschreibung, Preis, Namen, Kaufbutton */
 
-.produkt p{
+.produkt p {
     position: absolute;
     bottom: 5%;
     left: 5%;
@@ -133,19 +145,17 @@ h2.Kategorien-Unterteilungen{
     border-radius: 5px;
     margin: 0px;
     width: 88%;
-
 }
 
-.produkt{
+.produkt {
     position: relative;
     width: 30%;
     height: 50vh;
     margin-bottom: 40px;
-    
 }
 
-.produkt img{
-    object-fit: cover;  
+.produkt img {
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
