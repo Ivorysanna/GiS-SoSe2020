@@ -92,6 +92,7 @@ h2.Kategorien-Unterteilungen {
 .nav-kategorien a {
     height: 100%;
 }
+
 .alpakabild-container {
     width: 100%;
 }
@@ -136,11 +137,22 @@ h2.Kategorien-Unterteilungen {
     padding-bottom: 10px;
 }
 
-.no-break{
+.no-break {
     white-space: nowrap;
 }
 
+.flex-container {
+    width: 400px;
+    margin-bottom: 10px;
+    height: 700px;
+    overflow: hidden;
+}
 
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
 /* Artikel Beschreibung, Preis, Namen, Kaufbutton */
 
@@ -154,6 +166,7 @@ h2.Kategorien-Unterteilungen {
     border-radius: 5px;
     margin: 0px;
     width: 88%;
+
 }
 
 .produkt {
@@ -171,40 +184,38 @@ h2.Kategorien-Unterteilungen {
 /* Responsiv */
 
 /* Desktop */
-@media (min-width: 1025px){
+
+@media (min-width: 1025px) {
     .produkt {
-        width: 33%;
-        
+        width: 500px;
     }
 }
 
+
 /* Mobil */
-@media (max-width: 599px){
+
+@media (max-width: 599px) {
     .produkt {
-        width: 100%;
-        
+        width: 550px;
     }
     .logo-nav {
         justify-content: center;
-
     }
-    .überschrift{
+    .überschrift {
         width: 100%;
         font-size: 24px;
     }
-
-    .alpakabild-container img{
+    .alpakabild-container img {
         width: 100%;
     }
-
-
 
 }
 
 /* Tablet */
-@media (min-width:600px) and (max-width:1024px){
+
+@media (min-width:600px) and (max-width:1024px) {
     .produkt {
-        width: 48%;
-        
+        width: 300px;
     }
+    
 }
