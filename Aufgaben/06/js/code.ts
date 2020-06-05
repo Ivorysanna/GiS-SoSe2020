@@ -1,28 +1,4 @@
 namespace AlpakaShop {
-
-
-    document.addEventListener("load", handleLoad);
-
-    function handleLoad(_event: Event): void {
-        console.log(_event);
-    }
-
-    function handleClick(_event: Event): void {
-        console.log(_event);
-    }
-    
-
-    
-     
-
-    interface Artikel {
-        name: string;
-        preis: number;
-        bezeichnung: string;
-        bild: string;
-        kategorie: string;
-    }
-
     let artikelArray: Artikel[] = [
         { name: "Chuck", preis: 610, bezeichnung: "männlich, Junges Tier", bild: "Alpaka/GrauesAlpaka.jpg", kategorie: "alpaka" },
         { name: "Daisy", preis: 550, bezeichnung: "weiblich, jüngstes Tier", bild: "Alpaka/BabyAlpaka.jpg", kategorie: "alpaka" },
@@ -50,27 +26,64 @@ namespace AlpakaShop {
         { name: "Garn aus Alpakafell", preis: 17, bezeichnung: "Aus 100 % Alpakafell", bild: "Zubehör/alpakagarn.jpg", kategorie: "zubehör" }
     ];
 
+    document.addEventListener("load", handleLoad);
 
-    for (let index: number = 0; index < artikelArray.length; index++) {
-        let newDiv: HTMLDivElement = document.createElement("div");
-        newDiv.classList.add("produkt");
-        newDiv.innerHTML = `
-        <img src="${artikelArray[index].bild}">
-        <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
-        <button type="button">In den Warenkorb</button>
-        `;
-
-        if (artikelArray[index].kategorie == "alpaka") {
-            document.querySelector("#Alpakas")?.appendChild(newDiv);
-
-
-        }
-        else {
-            document.querySelector("#Zubehör")?.appendChild(newDiv);
-        }
-
-        newDiv.querySelector("button")?.addEventListener("click", handleClick);
-
-        // document.querySelector("a").innerText = "";
+    function handleLoad(_event: Event): void {
+        console.log(_event);
     }
+
+
+    let produktIntZaehler: number = 0;
+    let produktAnzahlSpan: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#produktAnzahl");
+    let summeProdukte: number = 0;
+
+    function handleClick(_event: Event): void {
+        // console.log(_event);
+        produktIntZaehler++;
+        if (produktIntZaehler != null) {
+            produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
+        }
+        let target: HTMLElement = <HTMLElement>_event.target;
+        let artikelInt: number = parseInt(target.getAttribute("articleIndex")!);
+        let artikel: Artikel = artikelArray[artikelInt];
+
+        summeProdukte += artikel.preis;
+        console.log(summeProdukte);
+
+    }
+
+    interface Artikel {
+        name: string;
+        preis: number;
+        bezeichnung: string;
+        bild: string;
+        kategorie: string;
+    }
+
+    function kategorienAnzeigen(kategoriename: string): void {
+
+        for (let index: number = 0; index < artikelArray.length; index++) {
+            if (artikelArray[index].kategorie == kategoriename) {
+                let newDiv: HTMLDivElement = document.createElement("div");
+                newDiv.classList.add("produkt");
+                newDiv.innerHTML = `
+            <img src="${artikelArray[index].bild}">
+            <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
+            <button type="button">In den Warenkorb</button>`;
+
+
+                if (artikelArray[index].kategorie == "alpaka") {
+                    document.querySelector("#Alpakas")?.appendChild(newDiv);
+                }
+                else {
+                    document.querySelector("#Zubehör")?.appendChild(newDiv);
+                }
+                let selectorButton: HTMLButtonElement = <HTMLButtonElement>newDiv.querySelector("button");
+                selectorButton?.addEventListener("click", handleClick);
+                selectorButton?.setAttribute("articleIndex", index.toString());
+            }
+            // document.querySelector("a").innerText = "";
+        }
+    }
+
 }

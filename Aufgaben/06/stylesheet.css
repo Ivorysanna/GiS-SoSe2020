@@ -61,10 +61,7 @@ h2.Kategorien-Unterteilungen {
 
 /* -------------------------------- */
 
-.cart-icon {
-    margin-left: 10px;
-    height: 100%;
-}
+
 
 .logo-nav {
     justify-content: space-between;
@@ -193,6 +190,14 @@ h2.Kategorien-Unterteilungen {
     height: 100%;
     width: 100%;
 }
+
+/* Warenkorb */
+.cart-icon {
+    margin-left: 10px;
+    height: 100%;
+}
+
+
 
 /* Responsiv */
 

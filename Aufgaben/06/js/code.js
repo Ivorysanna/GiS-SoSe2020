@@ -1,13 +1,6 @@
 "use strict";
 var AlpakaShop;
 (function (AlpakaShop) {
-    document.addEventListener("load", handleLoad);
-    function handleLoad(_event) {
-        console.log(_event);
-    }
-    function handleClick(_event) {
-        console.log(_event);
-    }
     let artikelArray = [
         { name: "Chuck", preis: 610, bezeichnung: "männlich, Junges Tier", bild: "Alpaka/GrauesAlpaka.jpg", kategorie: "alpaka" },
         { name: "Daisy", preis: 550, bezeichnung: "weiblich, jüngstes Tier", bild: "Alpaka/BabyAlpaka.jpg", kategorie: "alpaka" },
@@ -34,22 +27,46 @@ var AlpakaShop;
         { name: "Socken aus Alpakafell", preis: 40, bezeichnung: "3 Paar, 100 % Alpakafell", bild: "Zubehör/socken.jpg", kategorie: "zubehör" },
         { name: "Garn aus Alpakafell", preis: 17, bezeichnung: "Aus 100 % Alpakafell", bild: "Zubehör/alpakagarn.jpg", kategorie: "zubehör" }
     ];
-    for (let index = 0; index < artikelArray.length; index++) {
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("produkt");
-        newDiv.innerHTML = `
-        <img src="${artikelArray[index].bild}">
-        <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
-        <button type="button">In den Warenkorb</button>
-        `;
-        if (artikelArray[index].kategorie == "alpaka") {
-            document.querySelector("#Alpakas")?.appendChild(newDiv);
+    document.addEventListener("load", handleLoad);
+    function handleLoad(_event) {
+        console.log(_event);
+    }
+    let produktIntZaehler = 0;
+    let produktAnzahlSpan = document.querySelector("#produktAnzahl");
+    let summeProdukte = 0;
+    function handleClick(_event) {
+        // console.log(_event);
+        produktIntZaehler++;
+        if (produktIntZaehler != null) {
+            produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
         }
-        else {
-            document.querySelector("#Zubehör")?.appendChild(newDiv);
+        let target = _event.target;
+        let artikelInt = parseInt(target.getAttribute("articleIndex"));
+        let artikel = artikelArray[artikelInt];
+        summeProdukte += artikel.preis;
+        console.log(summeProdukte);
+    }
+    function kategorienAnzeigen(kategoriename) {
+        for (let index = 0; index < artikelArray.length; index++) {
+            if (artikelArray[index].kategorie == kategoriename) {
+                let newDiv = document.createElement("div");
+                newDiv.classList.add("produkt");
+                newDiv.innerHTML = `
+            <img src="${artikelArray[index].bild}">
+            <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
+            <button type="button">In den Warenkorb</button>`;
+                if (artikelArray[index].kategorie == "alpaka") {
+                    document.querySelector("#Alpakas")?.appendChild(newDiv);
+                }
+                else {
+                    document.querySelector("#Zubehör")?.appendChild(newDiv);
+                }
+                let selectorButton = newDiv.querySelector("button");
+                selectorButton?.addEventListener("click", handleClick);
+                selectorButton?.setAttribute("articleIndex", index.toString());
+            }
+            // document.querySelector("a").innerText = "";
         }
-        newDiv.querySelector("button")?.addEventListener("click", handleClick);
-        // document.querySelector("a").innerText = "";
     }
 })(AlpakaShop || (AlpakaShop = {}));
 //# sourceMappingURL=code.js.map
