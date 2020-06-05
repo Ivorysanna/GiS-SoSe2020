@@ -1,5 +1,13 @@
 namespace AlpakaShop {
 
+
+    document.addEventListener("load", handleLoad);
+
+    function handleLoad(_event: Event): void {
+        console.log(_event);
+    }
+
+
     interface Artikel {
         name: string;
         preis: number;

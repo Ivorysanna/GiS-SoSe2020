@@ -1,6 +1,10 @@
 "use strict";
 var AlpakaShop;
 (function (AlpakaShop) {
+    document.addEventListener("load", handleLoad);
+    function handleLoad(_event) {
+        console.log(_event);
+    }
     let artikelArray = [
         { name: "Chuck", preis: 600, bezeichnung: "männlich, Junges Tier", bild: "Alpaka/GrauesAlpaka.jpg", kategorie: "alpaka" },
         { name: "Daisy", preis: 550, bezeichnung: "weiblich, jüngstes Tier", bild: "Alpaka/BabyAlpaka.jpg", kategorie: "alpaka" },
