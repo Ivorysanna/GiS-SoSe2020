@@ -101,6 +101,7 @@ h2.Kategorien-Unterteilungen {
 
 .nav-kategorien a {
     height: 100%;
+    cursor: pointer;
 }
 
 .alpakabild-container {

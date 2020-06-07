@@ -38,14 +38,14 @@ namespace AlpakaShop {
     let summeProdukte: number = 0;
 
     function handleClick(_event: Event): void {
-        // console.log(_event);
         produktIntZaehler++;
-        if (produktIntZaehler != null) {
-            produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
-        }
+
+        produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
+
         let target: HTMLElement = <HTMLElement>_event.target;
         let artikelInt: number = parseInt(target.getAttribute("articleIndex")!);
         let artikel: Artikel = artikelArray[artikelInt];
+        
 
         summeProdukte += artikel.preis;
         console.log(summeProdukte);
@@ -62,8 +62,10 @@ namespace AlpakaShop {
 
     function kategorienAnzeigen(kategoriename: string): void {
 
+        document.querySelector("#Produkte")!.innerHTML = " ";
+
         for (let index: number = 0; index < artikelArray.length; index++) {
-            if (artikelArray[index].kategorie == kategoriename) {
+            if (artikelArray[index].kategorie == kategoriename || "Alle" == kategoriename) {
                 let newDiv: HTMLDivElement = document.createElement("div");
                 newDiv.classList.add("produkt");
                 newDiv.innerHTML = `
@@ -71,13 +73,8 @@ namespace AlpakaShop {
             <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
             <button type="button">In den Warenkorb</button>`;
 
+                document.querySelector("#Produkte")?.appendChild(newDiv);
 
-                if (artikelArray[index].kategorie == "alpaka") {
-                    document.querySelector("#Alpakas")?.appendChild(newDiv);
-                }
-                else {
-                    document.querySelector("#Zubehör")?.appendChild(newDiv);
-                }
                 let selectorButton: HTMLButtonElement = <HTMLButtonElement>newDiv.querySelector("button");
                 selectorButton?.addEventListener("click", handleClick);
                 selectorButton?.setAttribute("articleIndex", index.toString());
@@ -85,5 +82,17 @@ namespace AlpakaShop {
             // document.querySelector("a").innerText = "";
         }
     }
+
+    document.querySelector("#AlpakasTitel")?.addEventListener("click", function (): void {
+        kategorienAnzeigen("alpaka");
+
+    });
+
+    document.querySelector("#ZubehörTitel")?.addEventListener("click", function (): void {
+        kategorienAnzeigen("zubehör");
+
+    });
+
+    kategorienAnzeigen("Alle");
 
 }

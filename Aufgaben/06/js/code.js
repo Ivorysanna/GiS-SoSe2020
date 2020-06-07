@@ -35,11 +35,8 @@ var AlpakaShop;
     let produktAnzahlSpan = document.querySelector("#produktAnzahl");
     let summeProdukte = 0;
     function handleClick(_event) {
-        // console.log(_event);
         produktIntZaehler++;
-        if (produktIntZaehler != null) {
-            produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
-        }
+        produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
         let target = _event.target;
         let artikelInt = parseInt(target.getAttribute("articleIndex"));
         let artikel = artikelArray[artikelInt];
@@ -47,20 +44,16 @@ var AlpakaShop;
         console.log(summeProdukte);
     }
     function kategorienAnzeigen(kategoriename) {
+        document.querySelector("#Produkte").innerHTML = " ";
         for (let index = 0; index < artikelArray.length; index++) {
-            if (artikelArray[index].kategorie == kategoriename) {
+            if (artikelArray[index].kategorie == kategoriename || "Alle" == kategoriename) {
                 let newDiv = document.createElement("div");
                 newDiv.classList.add("produkt");
                 newDiv.innerHTML = `
             <img src="${artikelArray[index].bild}">
             <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
             <button type="button">In den Warenkorb</button>`;
-                if (artikelArray[index].kategorie == "alpaka") {
-                    document.querySelector("#Alpakas")?.appendChild(newDiv);
-                }
-                else {
-                    document.querySelector("#Zubehör")?.appendChild(newDiv);
-                }
+                document.querySelector("#Produkte")?.appendChild(newDiv);
                 let selectorButton = newDiv.querySelector("button");
                 selectorButton?.addEventListener("click", handleClick);
                 selectorButton?.setAttribute("articleIndex", index.toString());
@@ -68,5 +61,12 @@ var AlpakaShop;
             // document.querySelector("a").innerText = "";
         }
     }
+    document.querySelector("#AlpakasTitel")?.addEventListener("click", function () {
+        kategorienAnzeigen("alpaka");
+    });
+    document.querySelector("#ZubehörTitel")?.addEventListener("click", function () {
+        kategorienAnzeigen("zubehör");
+    });
+    kategorienAnzeigen("Alle");
 })(AlpakaShop || (AlpakaShop = {}));
 //# sourceMappingURL=code.js.map
