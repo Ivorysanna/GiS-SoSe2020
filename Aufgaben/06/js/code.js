@@ -67,6 +67,9 @@ var AlpakaShop;
     document.querySelector("#ZubehörTitel")?.addEventListener("click", function () {
         kategorienAnzeigen("zubehör");
     });
+    document.querySelector("#AllesTitel")?.addEventListener("click", function () {
+        kategorienAnzeigen("Alle");
+    });
     kategorienAnzeigen("Alle");
 })(AlpakaShop || (AlpakaShop = {}));
 //# sourceMappingURL=code.js.map

@@ -93,6 +93,11 @@ namespace AlpakaShop {
 
     });
 
+    document.querySelector("#AllesTitel")?.addEventListener("click", function (): void {
+        kategorienAnzeigen("Alle");
+
+    });
+
     kategorienAnzeigen("Alle");
 
 }
