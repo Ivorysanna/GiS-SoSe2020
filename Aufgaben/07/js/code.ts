@@ -1,20 +1,15 @@
 namespace AlpakaShop {
+    localStorage.setItem("warenkorb", "[]");
+
     let artikelArray: Artikel[] = [
-        
+
     ];
-
-    document.addEventListener("load", handleLoad);
-
-    function handleLoad(_event: Event): void {
-        console.log(_event);
-    }
-
 
     let produktIntZaehler: number = 0;
     let produktAnzahlSpan: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#produktAnzahl");
     let summeProdukte: number = 0;
 
-    function handleClick(_event: Event): void {
+    function artikelWarenkorbClick(_event: Event): void {
         produktIntZaehler++;
 
         produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
@@ -22,20 +17,18 @@ namespace AlpakaShop {
         let target: HTMLElement = <HTMLElement>_event.target;
         let artikelInt: number = parseInt(target.getAttribute("articleIndex")!);
         let artikel: Artikel = artikelArray[artikelInt];
-        
+
 
         summeProdukte += artikel.preis;
         console.log(summeProdukte);
 
+        //In den Warenkorb hinzufügen
+        let aktuellerWarenkorb: Artikel[] = JSON.parse(localStorage.getItem("warenkorb")!);
+        aktuellerWarenkorb.push(artikel);
+        localStorage.setItem("warenkorb", JSON.stringify(aktuellerWarenkorb));
     }
 
-    interface Artikel {
-        name: string;
-        preis: number;
-        bezeichnung: string;
-        bild: string;
-        kategorie: string;
-    }
+
 
     async function kategorienAnzeigen(kategoriename: string): Promise<void> {
 
@@ -51,23 +44,23 @@ namespace AlpakaShop {
                 <img src="${artikelArray[index].bild}">
                 <p>${artikelArray[index].name} <b>${artikelArray[index].preis} €</b>, ${artikelArray[index].bezeichnung}</p>
                 <button type="button">In den Warenkorb</button>`;
-                
+
                 document.querySelector("#Produkte")?.appendChild(newDiv);
-                
+
+
                 let selectorButton: HTMLButtonElement = <HTMLButtonElement>newDiv.querySelector("button");
-                selectorButton?.addEventListener("click", handleClick);
+                selectorButton?.addEventListener("click", artikelWarenkorbClick);
                 selectorButton?.setAttribute("articleIndex", index.toString());
             }
-            // document.querySelector("a").innerText = "";
         }
     }
-    
+
     //Array zugreifen in Json
     async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         artikelArray = await response.json();
     }
-    
+
     document.querySelector("#AlpakasTitel")?.addEventListener("click", function (): void {
         kategorienAnzeigen("alpaka");
 
@@ -84,5 +77,6 @@ namespace AlpakaShop {
     });
 
     kategorienAnzeigen("Alle");
+
 
 }

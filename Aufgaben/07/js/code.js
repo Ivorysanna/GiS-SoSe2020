@@ -1,15 +1,12 @@
 "use strict";
 var AlpakaShop;
 (function (AlpakaShop) {
+    localStorage.setItem("warenkorb", "[]");
     let artikelArray = [];
-    document.addEventListener("load", handleLoad);
-    function handleLoad(_event) {
-        console.log(_event);
-    }
     let produktIntZaehler = 0;
     let produktAnzahlSpan = document.querySelector("#produktAnzahl");
     let summeProdukte = 0;
-    function handleClick(_event) {
+    function artikelWarenkorbClick(_event) {
         produktIntZaehler++;
         produktAnzahlSpan.innerHTML = produktIntZaehler.toString();
         let target = _event.target;
@@ -17,6 +14,10 @@ var AlpakaShop;
         let artikel = artikelArray[artikelInt];
         summeProdukte += artikel.preis;
         console.log(summeProdukte);
+        //In den Warenkorb hinzufügen
+        let aktuellerWarenkorb = JSON.parse(localStorage.getItem("warenkorb"));
+        aktuellerWarenkorb.push(artikel);
+        localStorage.setItem("warenkorb", JSON.stringify(aktuellerWarenkorb));
     }
     async function kategorienAnzeigen(kategoriename) {
         document.querySelector("#Produkte").innerHTML = " ";
@@ -31,10 +32,9 @@ var AlpakaShop;
                 <button type="button">In den Warenkorb</button>`;
                 document.querySelector("#Produkte")?.appendChild(newDiv);
                 let selectorButton = newDiv.querySelector("button");
-                selectorButton?.addEventListener("click", handleClick);
+                selectorButton?.addEventListener("click", artikelWarenkorbClick);
                 selectorButton?.setAttribute("articleIndex", index.toString());
             }
-            // document.querySelector("a").innerText = "";
         }
     }
     //Array zugreifen in Json
