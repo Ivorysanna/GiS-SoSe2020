@@ -47,7 +47,6 @@ namespace AlpakaShop {
 
                 document.querySelector("#Produkte")?.appendChild(newDiv);
 
-
                 let selectorButton: HTMLButtonElement = <HTMLButtonElement>newDiv.querySelector("button");
                 selectorButton?.addEventListener("click", artikelWarenkorbClick);
                 selectorButton?.setAttribute("articleIndex", index.toString());

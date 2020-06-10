@@ -53,4 +53,4 @@ var AlpakaShop;
     });
     kategorienAnzeigen("Alle");
 })(AlpakaShop || (AlpakaShop = {}));
-//# sourceMappingURL=code.js.map
+//# sourceMappingURL=startseite.js.map
