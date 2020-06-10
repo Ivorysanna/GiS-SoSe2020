@@ -83,6 +83,7 @@ namespace AlpakaShop {
         }
     }
 
+
     document.querySelector("#AlpakasTitel")?.addEventListener("click", function (): void {
         kategorienAnzeigen("alpaka");
 

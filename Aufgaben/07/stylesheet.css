@@ -1,0 +1,240 @@
+/* Komplexe Selektoren */
+
+a:hover {
+    background-color: #CED8F6;
+}
+
+.begrüßung h1 {
+    color: #0B3861;
+}
+
+.einleitung p {
+    font-size: 20px;
+}
+
+.shoptitle {
+    font-family: 'Teko', sans-serif;
+}
+
+.einleitung a {
+    font-weight: bold;
+}
+
+.überschrift {
+    justify-self: end;
+    font-size: 2rem;
+}
+
+.logo-nav a img {
+    height: 100%;
+}
+
+/* Überschriebene Tags */
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+h2.Kategorien-Unterteilungen {
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.divider h2{
+        justify-content: space-evenly;
+        width: 100%;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        
+    }
+    
+    .divider{
+        background-color: #CED8F6;   
+}
+
+/* -------------------------------- */
+
+
+
+.logo-nav {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.suchfunktion {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.search {
+    height: 50%;
+}
+
+.nav-kategorien {
+    justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.nav-width {
+    width: 100%;
+    background-color: #CED8F6;
+}
+
+.nav-kategorien a:hover {
+    background-color: white;
+}
+
+.nav-kategorien a {
+    height: 100%;
+    cursor: pointer;
+}
+
+.alpakabild-container {
+    width: 100%;
+}
+
+.alpakabild-container img {
+    width: 60%;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.produkt-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.banner-size img {
+    margin-bottom: 70px;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover
+}
+
+.wikieintrag a {
+    font-size: 10px;
+    color: blue;
+}
+
+#alpaka-Kauf {
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+#alpaka-Kauf a {
+    text-decoration: underline;
+}
+
+.rechtsbünding {
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.flex-container {
+    width: 400px;
+    margin-bottom: 10px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Artikel Beschreibung, Preis, Namen, Kaufbutton */
+
+.produkt p {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 20px;
+    padding: 1%;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0px;
+    width: 88%;
+
+}
+
+.produkt {
+    position: relative;
+    height: 50vh;
+    margin-bottom: 40px;
+}
+
+.produkt img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Warenkorb */
+.cart-icon {
+    margin-left: 10px;
+    height: 100%;
+}
+
+
+
+/* Responsiv */
+
+/* Desktop */
+
+@media (min-width: 1025px) {
+    .produkt {
+        width: 500px;
+    }
+}
+
+
+/* Mobil */
+
+@media (max-width: 599px) {
+    .produkt {
+        width: 550px;
+    }
+    .logo-nav {
+        justify-content: center;
+    }
+    .überschrift {
+        width: 100%;
+        font-size: 24px;
+    }
+    .alpakabild-container img {
+        width: 100%;
+    }
+
+}
+
+/* Tablet */
+
+@media (min-width:600px) and (max-width:1024px) {
+    .produkt {
+        width: 300px;
+    }
+    
+}
