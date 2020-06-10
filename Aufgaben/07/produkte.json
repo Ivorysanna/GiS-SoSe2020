@@ -1,4 +1,5 @@
 [
+        { "name": "Chuck", "preis": 610, "bezeichnung": "männlich, Junges Tier", "bild": "Alpaka/GrauesAlpaka.jpg", "kategorie": "alpaka" },
         { "name": "Daisy", "preis": 550, "bezeichnung": "weiblich, jüngstes Tier", "bild": "Alpaka/BabyAlpaka.jpg", "kategorie": "alpaka" },
         { "name": "Bolle", "preis": 600, "bezeichnung": "männlich, liegt gerne in der Sonne", "bild": "Alpaka/braunesAlpaka2.jpg", "kategorie": "alpaka" },
         { "name": "Alwin", "preis": 700, "bezeichnung": "männlich, isst gerne Stroh", "bild": "Alpaka/DunkelBraunAlpaka.jpg", "kategorie": "alpaka" },

@@ -37,11 +37,11 @@ namespace AlpakaShop {
         kategorie: string;
     }
 
-    function kategorienAnzeigen(kategoriename: string): void {
+    async function kategorienAnzeigen(kategoriename: string): Promise<void> {
 
         document.querySelector("#Produkte")!.innerHTML = " ";
 
-        communicate();
+        await communicate("https://ivorysanna.github.io/GiS-SoSe2020/Aufgaben/07/produkte.json");
 
         for (let index: number = 0; index < artikelArray.length; index++) {
             if (artikelArray[index].kategorie == kategoriename || "Alle" == kategoriename) {

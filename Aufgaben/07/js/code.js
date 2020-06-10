@@ -18,9 +18,9 @@ var AlpakaShop;
         summeProdukte += artikel.preis;
         console.log(summeProdukte);
     }
-    function kategorienAnzeigen(kategoriename) {
+    async function kategorienAnzeigen(kategoriename) {
         document.querySelector("#Produkte").innerHTML = " ";
-        communicate();
+        await communicate("https://ivorysanna.github.io/GiS-SoSe2020/Aufgaben/07/produkte.json");
         for (let index = 0; index < artikelArray.length; index++) {
             if (artikelArray[index].kategorie == kategoriename || "Alle" == kategoriename) {
                 let newDiv = document.createElement("div");
