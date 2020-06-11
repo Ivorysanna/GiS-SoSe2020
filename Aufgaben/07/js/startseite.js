@@ -1,7 +1,9 @@
 "use strict";
 var AlpakaShop;
 (function (AlpakaShop) {
-    localStorage.setItem("warenkorb", "[]");
+    if (!localStorage.getItem("warenkorb")) {
+        localStorage.setItem("warenkorb", "[]");
+    }
     let artikelArray = [];
     let produktIntZaehler = 0;
     let produktAnzahlSpan = document.querySelector("#produktAnzahl");

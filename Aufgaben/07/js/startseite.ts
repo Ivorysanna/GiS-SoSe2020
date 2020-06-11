@@ -1,5 +1,7 @@
 namespace AlpakaShop {
-    localStorage.setItem("warenkorb", "[]");
+    if (!localStorage.getItem("warenkorb")){
+        localStorage.setItem("warenkorb", "[]");
+    }
 
     let artikelArray: Artikel[] = [
 
