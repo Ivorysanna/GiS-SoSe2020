@@ -1,5 +1,5 @@
 namespace AlpakaShop {
-    if (!localStorage.getItem("warenkorb")){
+    if (!localStorage.getItem("warenkorb")) {
         localStorage.setItem("warenkorb", "[]");
     }
 
