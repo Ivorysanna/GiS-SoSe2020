@@ -25,8 +25,8 @@ namespace AlpakaShop {
 
         localStorage.setItem("warenkorb", JSON.stringify(aktuellerWarenkorb));
 
-        target.parentNode?.parentNode?.removeChild(target.parentNode);
-        warenkorbSummeAnzeigen();
+        //Kann ich das anders lösen?
+        location.reload();
     }
 
     for (let index: number = 0; index < aktuellerWarenkorb.length; index++) {

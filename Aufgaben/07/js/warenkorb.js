@@ -21,8 +21,8 @@ var AlpakaShop;
             aktuellerWarenkorb.splice(entfernenIndex, 1);
         }
         localStorage.setItem("warenkorb", JSON.stringify(aktuellerWarenkorb));
-        target.parentNode?.parentNode?.removeChild(target.parentNode);
-        warenkorbSummeAnzeigen();
+        //Kann ich das anders lösen?
+        location.reload();
     }
     for (let index = 0; index < aktuellerWarenkorb.length; index++) {
         let newDiv = document.createElement("div");

@@ -4,7 +4,7 @@
         { "name": "Bolle", "preis": 600, "bezeichnung": "männlich, liegt gerne in der Sonne", "bild": "Alpaka/braunesAlpaka2.jpg", "kategorie": "alpaka" },
         { "name": "Alwin", "preis": 700, "bezeichnung": "männlich, isst gerne Stroh", "bild": "Alpaka/DunkelBraunAlpaka.jpg", "kategorie": "alpaka" },
         { "name": "Al Pacone", "preis": 800, "bezeichnung": "männlich, ist edler Herkunft", "bild": "Alpaka/Weiß-SchwarzAlpaka.jpg", "kategorie": "alpaka" },
-        { "name": "Hansi", "preis": 450, "bezeichnung": "männlich, langhaar Alpaka", "bild": "Alpaka/langhaarAlpaka.jpg", "kategorie": "alpaka" },
+        { "name": "Hansi", "preis": 450, "bezeichnung": "männlich, Langhaar-Alpaka", "bild": "Alpaka/langhaarAlpaka.jpg", "kategorie": "alpaka" },
         { "name": "Marie", "preis": 580, "bezeichnung": "weiblich, sehr zutraulich auch Kindern gegenüber", "bild": "Alpaka/RotesAlpaka.jpg", "kategorie": "alpaka" },
         { "name": "Keira", "preis": 660, "bezeichnung": "weiblich, verspielt", "bild": "Alpaka/weißesAlpaka.jpg", "kategorie": "alpaka" },
         { "name": "Lucy", "preis": 650, "bezeichnung": "weiblich, ein Geschwisterpaar, ihr Bruder: Loki", "bild": "Alpaka/Alpakazwilling2.jpg", "kategorie": "alpaka" },
