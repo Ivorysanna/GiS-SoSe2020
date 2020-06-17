@@ -1,0 +1,21 @@
+{
+  "name": "gis-sose2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgaben/08/js/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivorysanna/GiS-SoSe2020.git"
+  },
+  "author": "Violetta Pyralov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ivorysanna/GiS-SoSe2020/issues"
+  },
+  "homepage": "https://github.com/Ivorysanna/GiS-SoSe2020#readme"
+}
