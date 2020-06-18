@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="js/startseite.js" async ></script>
+    <script src="js/anmelden.js" async ></script>
     <script src="js/global.js" async></script>
 
 </head>
@@ -34,13 +34,11 @@
         </div>
     </header>
     
-    <form action="http://127.0.0.1:8100" method="get">
+    <form>
         <label for="name">Nachname:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="username"><br><br>
         <label for="email">E-Mail Adresse:</label>
         <input type="text" id="email" name="email"><br><br>
-        <input type="radio" id="weiblich" name="geschlecht" value="Weiblich">
-        <label for="weiblich">Weiblich</label>
-        <input type="submit" value="Anmelden">
+        <input type="button" id="absendeButton" value="Anmelden">
       </form>
 </body>
