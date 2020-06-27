@@ -1,5 +1,5 @@
 import * as Http from "http";
-import { url } from "inspector";
+//import { url } from "inspector";
 import * as Url from "url";
 
 export namespace A08Server {
@@ -23,18 +23,14 @@ export namespace A08Server {
 
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-
         //Setzen von Metadaten der Antowrt
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
         //Inhalt von Response
-        _response.write(Url.parse(_request.url!));
-        console.log(_request.url);
+        _response.write(JSON.stringify(Url.parse(_request.url!).query));
 
         //Beendet Response und schickt sie ab
         _response.end();
-
-        
     }
 }

@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.A08Server = void 0;
 const Http = require("http");
+//import { url } from "inspector";
+const Url = require("url");
 var A08Server;
 (function (A08Server) {
     console.log("Starting server");
@@ -23,8 +25,7 @@ var A08Server;
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         //Inhalt von Response
-        _response.write(_request.url);
-        console.log(_request.url);
+        _response.write(JSON.stringify(Url.parse(_request.url).query));
         //Beendet Response und schickt sie ab
         _response.end();
     }
