@@ -6,7 +6,9 @@ namespace AnmeldeSeite {
         let formData: FormData = new FormData(document.forms[0]);
 
         //Meine URL auf Heroku
-        let url: URL = new URL("https://gissose.herokuapp.com");
+        let url: URL = new URL("localhost:8100");
+
+        //let url: URL = new URL("https://gissose.herokuapp.com");
 
 
         //Iteriert über die Einträge der FormData

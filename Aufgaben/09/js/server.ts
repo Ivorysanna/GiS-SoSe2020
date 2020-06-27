@@ -1,5 +1,6 @@
 import * as Http from "http";
-//import * as Url from "url";
+import { url } from "inspector";
+import * as Url from "url";
 
 export namespace A08Server {
     console.log("Starting server");
@@ -28,10 +29,12 @@ export namespace A08Server {
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
         //Inhalt von Response
-        _response.write(_request.url);
+        _response.write(Url.parse(_request.url!));
         console.log(_request.url);
 
         //Beendet Response und schickt sie ab
         _response.end();
+
+        
     }
 }
