@@ -25,7 +25,10 @@ var A08Server;
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         //Inhalt von Response
-        _response.write(JSON.stringify(Url.parse(_request.url).query));
+        //_response.write(JSON.stringify(Url.parse(_request.url!, true).query));
+        //In Antwort wird geschrieben(ein Json.in einen String umwandeln(In eine URL verwandeln(url von request liegt als String vor(?).erstellt ein Assoziatives Array)))
+        let parsedURL = Url.parse(_request.url, true);
+        _response.write(JSON.stringify(parsedURL.query));
         //Beendet Response und schickt sie ab
         _response.end();
     }
