@@ -6,7 +6,7 @@ namespace AnmeldeSeite {
         let formData: FormData = new FormData(document.forms[0]);
 
         //Meine URL auf Heroku
-        let url: URL = new URL("http://127.0.0.1:8100");
+        let url: URL = new URL("http://127.0.0.1:8100/html");
 
         //let url: URL = new URL("https://gissose.herokuapp.com");
 
@@ -22,7 +22,7 @@ namespace AnmeldeSeite {
             .then(function (response) {
                 return response.text();
             }).then(function (data) {
-                console.log(data);
+                document.querySelector("#antwort")!.innerHTML = data;
             });
     }
 
