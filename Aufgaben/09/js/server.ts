@@ -5,7 +5,9 @@ import * as Url from "url";
 export namespace A08Server {
     console.log("Starting server");
 
-    let port: number = 8100;
+    let port: number = Number(process.env.PORT);
+    if (!port)
+        port = 8100;
     //Server wird erstellt mit createServer
     let server: Http.Server = Http.createServer();
 
@@ -18,6 +20,7 @@ export namespace A08Server {
     function handleListen(): void {
         console.log("Listening");
     }
+
 
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
