@@ -6,7 +6,6 @@ var AnmeldeSeite;
         //Erstellt eine neue Formdata aus dem ersten Element im Formulararray
         let formData = new FormData(document.forms[0]);
         //Meine URL auf Heroku
-        //let url: URL = new URL("http://127.0.0.1:8100/html");
         let url = new URL("https://gissose.herokuapp.com/html");
         //Iteriert über die Einträge der FormData
         for (let entry of formData) {

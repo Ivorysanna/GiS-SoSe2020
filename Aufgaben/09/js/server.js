@@ -7,7 +7,9 @@ const Url = require("url");
 var A08Server;
 (function (A08Server) {
     console.log("Starting server");
-    let port = 8100;
+    let port = Number(process.env.PORT);
+    if (!port)
+        port = 8100;
     //Server wird erstellt mit createServer
     let server = Http.createServer();
     //fügt Request-Listener hinzu
