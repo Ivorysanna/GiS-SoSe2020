@@ -1,6 +1,7 @@
 import * as Http from "http";
 //import { url } from "inspector";
 import * as Url from "url";
+import * as Mongo from "mongodb";
 
 export namespace A08Server {
     console.log("Starting server");
@@ -17,9 +18,15 @@ export namespace A08Server {
     //Server beginnt auf Requests zu hören
     server.listen(port);
 
-    function handleListen(): void {
+    async function handleListen(): Promise <void> {
         console.log("Listening");
+        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient("https://gis-ist-geil.ohssx.mongodb.net");
+        await mongoClient.connect();
+    
+        let order: Mongo.Collection = mongoClient.db("Test").collection("Sudents");
+        console.log(order);
     }
+
 
 
 
