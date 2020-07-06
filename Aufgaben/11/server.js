@@ -21,7 +21,8 @@ var Formular;
         let mongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
         await mongoClient.connect();
         let order = mongoClient.db("Test").collection("Students");
-        console.log(order.find());
+        let orderArray = await order.find().toArray();
+        console.log(orderArray);
     }
     function handleRequest(_request, _response) {
         //Setzen von Metadaten der Antowrt

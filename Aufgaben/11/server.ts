@@ -23,8 +23,9 @@ namespace Formular{
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
         await mongoClient.connect();
 
-        let order: Mongo.Collection = mongoClient.db("Test").collection("Students");
-        console.log(order.find());
+            let order: Mongo.Collection = mongoClient.db("Test").collection("Students");
+            let orderArray: any[] = await order.find().toArray();
+            console.log(orderArray);
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
