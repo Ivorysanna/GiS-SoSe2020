@@ -11,7 +11,7 @@
     "@types/node": "^14.0.14"
   },
   "scripts": {
-    "start": "node Aufgaben/09/js/server.js"
+    "start": "node Aufgaben/11/js/server.js"
   },
   "repository": {
     "type": "git",
