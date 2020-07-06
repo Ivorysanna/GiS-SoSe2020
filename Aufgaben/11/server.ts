@@ -20,11 +20,11 @@ namespace Formular{
 
     async function handleListen(): Promise <void> {
         console.log("Listening");
-        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient("https://gis-ist-geil.ohssx.mongodb.net");
+        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
         await mongoClient.connect();
 
         let order: Mongo.Collection = mongoClient.db("Test").collection("Students");
-        console.log(order);
+        console.log(order.find());
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
