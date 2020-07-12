@@ -32,14 +32,12 @@ var Formular;
         //_response.write(JSON.stringify(Url.parse(_request.url!, true).query));
         //In Antwort wird geschrieben(ein Json.in einen String umwandeln(In eine URL verwandeln(url von request liegt als String vor(?).erstellt ein Assoziatives Array)))
         let parsedURL = Url.parse(_request.url, true);
-        console.log("Kommt was an");
         if (parsedURL.pathname == "/read") {
             let orderArray = await order.find().toArray();
-            _response.write(orderArray);
+            _response.write(JSON.stringify(orderArray));
         }
         else if (parsedURL.pathname == "/write") {
             order.insertOne(parsedURL.query);
-            console.log("Klappt");
         }
         else {
             _response.statusCode = 501;
