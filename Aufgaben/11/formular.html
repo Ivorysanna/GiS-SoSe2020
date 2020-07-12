@@ -5,14 +5,14 @@
         <meta charset="UTF-8">
         <title>Formular</title>
         <meta name="Formular" content="Formular">
-        <link rel="stylesheet" href="stylesheet.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="client.js" async></script>
     </head>
 <body>
 
     <form>
-        <label for="nachname">Nachname</label>
-        <input id="nachname">
+        <label for="nachname" >Nachname</label>
+        <input id="nachname" name="nachname">
     </br>
         <input type="radio" id="weiblich" name="Geschlecht" value="Weiblich">
         <label for="weiblich"> Weiblich</label>
@@ -24,7 +24,7 @@
         <label for="divers"> Divers</label>
     </br>
         <label for="passwort">Passwort</label> 
-        <input type="password" id="passwort" size="30" maxlength="40" required>
+        <input type="password"  name="passwort" id="passwort" size="30" maxlength="40">
     </br>  
         <button type="submit" id="absenden"> Absenden</button>
         <button type="submit" id="serverdaten"> Serverdaten</button>
