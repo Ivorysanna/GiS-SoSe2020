@@ -8,8 +8,8 @@ namespace Client{
          let formData: FormData = new FormData(document.forms[0]);
 
          //Meine URL auf Heroku html
-         //let url: URL = new URL("https://gissose.herokuapp.com/write");
-         let url: URL = new URL("http://127.0.0.1:8100/write");
+         let url: URL = new URL("https://gissose.herokuapp.com/write");
+         
  
          //Iteriert über die Einträge der FormData
          for (let entry of formData) {
@@ -29,8 +29,8 @@ namespace Client{
          let formData: FormData = new FormData(document.forms[0]);
 
          //Meine URL auf Heroku html
-         //let url: URL = new URL("https://gissose.herokuapp.com/read");
-         let url: URL = new URL("http://127.0.0.1:8100/read");
+         let url: URL = new URL("https://gissose.herokuapp.com/read");
+         
  
  
          //Iteriert über die Einträge der FormData

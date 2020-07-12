@@ -8,8 +8,7 @@ var Client;
         //Erstellt eine neue Formdata aus dem ersten Element im Formulararray
         let formData = new FormData(document.forms[0]);
         //Meine URL auf Heroku html
-        //let url: URL = new URL("https://gissose.herokuapp.com/write");
-        let url = new URL("http://127.0.0.1:8100/write");
+        let url = new URL("https://gissose.herokuapp.com/write");
         //Iteriert über die Einträge der FormData
         for (let entry of formData) {
             //Fügt die FormData entrys zur URL hinzu als Suchparameter hinzu
@@ -25,8 +24,7 @@ var Client;
         //Erstellt eine neue Formdata aus dem ersten Element im Formulararray
         let formData = new FormData(document.forms[0]);
         //Meine URL auf Heroku html
-        //let url: URL = new URL("https://gissose.herokuapp.com/read");
-        let url = new URL("http://127.0.0.1:8100/read");
+        let url = new URL("https://gissose.herokuapp.com/read");
         //Iteriert über die Einträge der FormData
         for (let entry of formData) {
             //Fügt die FormData entrys zur URL hinzu als Suchparameter hinzu
