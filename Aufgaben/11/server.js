@@ -23,10 +23,8 @@ var Formular;
         mongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
         await mongoClient.connect();
         order = mongoClient.db("Test").collection("Students");
-        // let orderArray: any[] = await order.find().toArray();
-        // console.log(orderArray);
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         //Setzen von Metadaten der Antowrt
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -34,16 +32,14 @@ var Formular;
         //_response.write(JSON.stringify(Url.parse(_request.url!, true).query));
         //In Antwort wird geschrieben(ein Json.in einen String umwandeln(In eine URL verwandeln(url von request liegt als String vor(?).erstellt ein Assoziatives Array)))
         let parsedURL = Url.parse(_request.url, true);
+        console.log("Kommt was an");
         if (parsedURL.pathname == "/read") {
-            console.log(parsedURL.query);
-            //https://stackoverflow.com/questions/7241878/for-in-loops-in-javascript-key-value-pairs
-            for (let [key, value] of Object.entries(parsedURL.query)) {
-                let htmlAusgabe = key + " : " + value + "<br/>";
-                _response.write(htmlAusgabe);
-            }
+            let orderArray = await order.find().toArray();
+            _response.write(orderArray);
         }
         else if (parsedURL.pathname == "/write") {
-            order.insert(JSON.stringify(parsedURL.query));
+            order.insertOne(parsedURL.query);
+            console.log("Klappt");
         }
         else {
             _response.statusCode = 501;
