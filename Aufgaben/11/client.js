@@ -18,7 +18,7 @@ var Client;
             .then(function (response) {
             return response.text();
         }).then(function (data) {
-            document.querySelector("#antwort").innerHTML = data;
+            document.querySelector("#serverAntwort").innerHTML = data;
         });
     }
     function serverdatenFunktion() {

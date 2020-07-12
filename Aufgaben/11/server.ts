@@ -38,15 +38,15 @@ namespace Formular{
         //In Antwort wird geschrieben(ein Json.in einen String umwandeln(In eine URL verwandeln(url von request liegt als String vor(?).erstellt ein Assoziatives Array)))
         let parsedURL: Url.UrlWithParsedQuery= Url.parse(_request.url!, true);
 
-        if(parsedURL.pathname == "/html"){
+        if(parsedURL.pathname == "/read"){
             console.log(parsedURL.query);
             //https://stackoverflow.com/questions/7241878/for-in-loops-in-javascript-key-value-pairs
             for(let [key, value] of Object.entries(parsedURL.query)){
             let htmlAusgabe: string = key+ " : " + value + "<br/>";
             _response.write(htmlAusgabe);
             }
-        }else if(parsedURL.pathname =="/json") {
-            _response.write(JSON.stringify(parsedURL.query));
+        }else if(parsedURL.pathname =="/write") {
+            
 
         }else{
             _response.statusCode = 501;
