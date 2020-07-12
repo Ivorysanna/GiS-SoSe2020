@@ -16,13 +16,15 @@ var Formular;
     server.addListener("listening", handleListen);
     //Server beginnt auf Requests zu hören
     server.listen(port);
+    let mongoClient;
+    let order;
     async function handleListen() {
         console.log("Listening");
-        let mongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
+        mongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
         await mongoClient.connect();
-        let order = mongoClient.db("Test").collection("Students");
-        let orderArray = await order.find().toArray();
-        console.log(orderArray);
+        order = mongoClient.db("Test").collection("Students");
+        // let orderArray: any[] = await order.find().toArray();
+        // console.log(orderArray);
     }
     function handleRequest(_request, _response) {
         //Setzen von Metadaten der Antowrt
@@ -41,6 +43,7 @@ var Formular;
             }
         }
         else if (parsedURL.pathname == "/write") {
+            order.insert(JSON.stringify(parsedURL.query));
         }
         else {
             _response.statusCode = 501;

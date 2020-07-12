@@ -20,8 +20,6 @@ namespace Client{
          fetch(url.href)
              .then(function (response) {
                  return response.text();
-             }).then(function (data) {
-                 document.querySelector("#serverAntwort")!.innerHTML = data;
              });
     }
 

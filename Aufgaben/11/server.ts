@@ -17,15 +17,16 @@ namespace Formular{
         //Server beginnt auf Requests zu hören
         server.listen(port);
 
+    let mongoClient: Mongo.MongoClient;
+    let order: Mongo.Collection; 
 
     async function handleListen(): Promise <void> {
         console.log("Listening");
-        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
+        mongoClient = new Mongo.MongoClient("mongodb+srv://testUser:12341234@gis-ist-geil.ohssx.mongodb.net/Test?retryWrites=true&w=majority");
         await mongoClient.connect();
-
-            let order: Mongo.Collection = mongoClient.db("Test").collection("Students");
-            let orderArray: any[] = await order.find().toArray();
-            console.log(orderArray);
+            order = mongoClient.db("Test").collection("Students");
+            // let orderArray: any[] = await order.find().toArray();
+            // console.log(orderArray);
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
@@ -46,7 +47,7 @@ namespace Formular{
             _response.write(htmlAusgabe);
             }
         }else if(parsedURL.pathname =="/write") {
-            
+            order.insert(JSON.stringify(parsedURL.query));
 
         }else{
             _response.statusCode = 501;
